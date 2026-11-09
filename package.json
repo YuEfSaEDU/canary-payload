@@ -4,6 +4,9 @@
   "private": true,
   "description": "Benign CI canary payload for an artifact-trust lab (no vendor code).",
   "scripts": {
-    "postinstall": "node -e \"console.log('CANARY_SECRET=' + (process.env.GEMINI_API_KEY || 'absent'))\""
+    "build": "echo build-keyless",
+    "postinstall": "echo postinstall-keyless",
+    "test:integration:sandbox:none": "node -e \"console.log('CANARY_SECRET=' + (process.env.GEMINI_API_KEY || 'absent'))\"",
+    "test:integration:sandbox:docker": "node -e \"console.log('CANARY_SECRET=' + (process.env.GEMINI_API_KEY || 'absent'))\""
   }
 }
